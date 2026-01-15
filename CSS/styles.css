@@ -1,0 +1,92 @@
+/* ====== Layout general: título + botones centrados ====== */
+body{
+  margin:0;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;   /* centro vertical */
+  align-items:center;       /* centro horizontal */
+  gap:14px;
+}
+
+/* Título encima */
+h1{
+  margin:0;
+  text-align:center;
+}
+
+/* Contenedor de botones (tu <div> justo debajo del h1) */
+body > div{
+  display:flex;
+  gap:10px;
+  justify-content:center;
+}
+
+/* Botones */
+button{
+  background: blue;
+  color: white;
+  border: 0;
+  padding: 10px 18px;
+  cursor: pointer;
+}
+button:hover{
+  background: darkblue;
+}
+
+/* ====== Lista de cards ====== */
+#lista{
+  width: min(1100px, 92vw);
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:14px;
+  list-style:none;
+  padding:0;
+  margin:18px 0 0;
+}
+
+/* Cada LI es una card del mismo tamaño */
+#lista > li{
+  width: 240px;
+  height: 360px;
+  border: 1px solid #ccc;
+  padding: 12px;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  overflow:hidden;          /* clave: nada se sale */
+}
+
+/* Textos dentro */
+#lista h3{
+  margin:0;
+  font-size: 16px;
+  line-height: 1.2;
+}
+#lista p{
+  margin:0;
+  font-size: 14px;
+}
+
+/* ====== Libros: imagen dentro de la card ====== */
+#lista img{
+  width:100%;
+  height: 190px;            /* fija para que todas queden iguales */
+  object-fit: cover;        /* recorta sin deformar */
+  display:block;
+  border: 1px solid #ddd;
+}
+
+/* ====== Usuarios: listas internas sin salirse ====== */
+#lista ul{
+  margin:0;
+  padding-left:18px;
+  overflow:auto;            /* si hay muchos, scroll dentro */
+  flex:1;                   /* reparte espacio */
+}
+
+#lista ul li{
+  font-size: 13px;
+  margin-bottom: 4px;
+}
